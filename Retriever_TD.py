@@ -8,13 +8,14 @@ import Scrapperv2
 import sys
 
 ARGS = sys.argv
-ARGS = ['Retriever.py', '01', '2019']
+# ARGS = ['Retriever.py', '01', '2019']
 
 try:
     P_MES = ARGS[1]
     P_AGNO = int(ARGS[2])
+    R_Flag = ARGS[3]
 except:
-    print("Argumentos inváidos (es mes año con el formato MM YYYY)")
+    sys.exit("Argumentos inváidos (es mes año con el formato MM YYYY)")
 
 # API solo tiene resultados del periodo 2019 01 en adelante
 
@@ -47,10 +48,7 @@ def RUN_RETRIEVER(FLAG_TD, FLAG_CM, PARAM_QUERY):
         f_CM.close()
     print("Retriever periodo: ", str(P_AGNO), P_MES," completado.")
     
-AGNOS = [2021]
-MESES = ["02","03","04","05","06","07","08","09","10"]
+PARAM_QUERY = {'Agno':P_AGNO, 'Mes':P_MES, 'offset':0, 'limit':5}
 
-for A in AGNOS:
-    for M in MESES:
-        PARAM_QUERY = {'Agno':A, 'Mes':M, 'offset':0, 'limit':5}
-        RUN_RETRIEVER(True, True, PARAM_QUERY)
+if R_Flag == "Y":
+    RUN_RETRIEVER(True, True, PARAM_QUERY)
