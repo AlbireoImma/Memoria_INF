@@ -13,7 +13,8 @@ ARGS = sys.argv
 try:
     P_MES = ARGS[1]
     P_AGNO = int(ARGS[2])
-    R_Flag = ARGS[3]
+    FLAG_TD = ARGS[3]
+    FLAG_CM = ARGS[4]
 except:
     sys.exit("Argumentos inváidos (es mes año con el formato MM YYYY)")
 
@@ -28,7 +29,7 @@ PARAM_QUERY = {'Agno':P_AGNO, 'Mes':P_MES, 'offset':0, 'limit':5}
 def RUN_RETRIEVER(FLAG_TD, FLAG_CM, PARAM_QUERY):
     P_MES = PARAM_QUERY['Mes']
     P_AGNO = PARAM_QUERY['Agno']
-    if FLAG_TD:
+    if FLAG_TD == "Y":
         PARAM_QUERY['offset'] = 0
         PARAM_QUERY['limit'] = 5
         Total_R, Queries = Scrapperv2.obtener_cantidad_licitaciones(QUERY_LISTADO_TD, PARAM_QUERY)
@@ -37,7 +38,7 @@ def RUN_RETRIEVER(FLAG_TD, FLAG_CM, PARAM_QUERY):
         for e in Enlaces_TD:
             f_TD.write(e['urlAward'] + "\n")
         f_TD.close()
-    if FLAG_CM:
+    if FLAG_CM == "Y":
         PARAM_QUERY['offset'] = 0
         PARAM_QUERY['limit'] = 5
         Total_R, Queries = Scrapperv2.obtener_cantidad_licitaciones(QUERY_LISTADO_CM, PARAM_QUERY)
@@ -49,6 +50,4 @@ def RUN_RETRIEVER(FLAG_TD, FLAG_CM, PARAM_QUERY):
     print("Retriever periodo: ", str(P_AGNO), P_MES," completado.")
     
 PARAM_QUERY = {'Agno':P_AGNO, 'Mes':P_MES, 'offset':0, 'limit':5}
-
-if R_Flag == "Y":
-    RUN_RETRIEVER(True, True, PARAM_QUERY)
+RUN_RETRIEVER(FLAG_TD, FLAG_CM, PARAM_QUERY)

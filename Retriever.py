@@ -28,7 +28,11 @@ Total_R, Queries = Scrapperv2.obtener_cantidad_licitaciones(QUERY_LISTADO, PARAM
 Enlaces = Scrapperv2.obtener_enlaces_licitaciones(QUERY_LISTADO, PARAM_QUERY, Queries, Total_R)
 f_TD = open("./Links/LIC/{}{}.txt".format(P_AGNO, P_MES), "w")
 for e in Enlaces:
-    f_TD.write(e['urlAward'] + "\n")
+    print(e)
+    try:
+        f_TD.write(e['urlAward'] + "\n")
+    except:
+        pass
 f_TD.close()
 
 TENDERS, AWARDS = Scrapperv2.separar_tipo_enlace(Enlaces)
