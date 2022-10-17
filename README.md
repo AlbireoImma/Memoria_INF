@@ -12,7 +12,7 @@ Ejecutar el script de python en la raíz de la carpeta y asegurarse que existen 
 
 Esto es para asegurar el funcionamiento del script (el reporsitorio las trae por defecto). Para obtener enlaces existen dos scripts `Retriever.py` y `Retriever_TD.py`.
 
-El primero es solo para licitaciones y el segundo para tartos directos y convenios marco.
+El primero es solo para licitaciones y el segundo para tratos directos y convenios marco.
 
 La ejecución del primero es la siguiente:
 
