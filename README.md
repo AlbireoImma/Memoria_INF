@@ -40,4 +40,4 @@ cat PATH_LINKS_FILE | tr -d '\r' | xargs -n 1 -P 1000 wget -nc -nv
 
 ### Generar los conjuntos de datos
 
-Para generar un conjunto de datos se provee un jupyter notebook (`Mongo.ipynb`) en el cual se requiere de tener instalado o acceso a una instacia de MongoDB para realizar el flujo de datos. De cualquier manera los conjuntos procesado hasta octubre del 2021 se encuentran públicamente en [Kaggle](https://www.kaggle.com/datasets/franciscoabarca).
+Para generar un conjunto de datos se provee un jupyter notebook (`Mongo.ipynb`) en el cual se requiere de tener instalado o acceso a una instacia de MongoDB para realizar el flujo de datos. De cualquier manera los conjuntos procesado hasta octubre del 2021 se encuentran públicamente en [Kaggle](https://www.kaggle.com/franciscoabarca).
