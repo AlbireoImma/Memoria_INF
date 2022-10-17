@@ -32,7 +32,7 @@ python Retriever_TD.py anio mes Y Y
 
 ### Descargar archivos de los enlaces
 
-Para obtener los archivos JSON de los enlaces proporcionados por los scripts anteriores se recomienda utilizar el siguiente comando, en donde se debe reemplazar `PATH_LINKS_FILE` con la ruta a alguno de los archivos generados.
+Para obtener los archivos JSON de los enlaces proporcionados por los scripts anteriores se recomienda utilizar el siguiente comando, en donde se debe reemplazar `PATH_LINKS_FILE` con la ruta a alguno de los archivos generados. Recomendable utilizar el comando dentro de una carpeta puesto que brindará un archivo por enlace en el archivo proporcionado por `PATH_LINKS_FILE`.
 
 ```
 cat PATH_LINKS_FILE | tr -d '\r' | xargs -n 1 -P 1000 wget -nc -nv
