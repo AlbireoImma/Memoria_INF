@@ -19,7 +19,7 @@ La ejecución del primero es la siguiente:
 ```bash
 anio=2022
 mes=01
-python Retriever.py  anio mes N
+python Retriever.py anio mes N
 ```
 
 La ejecución del segundo es la siguiente (en donde los últimos dos argumentos corresponde a la descarga de enlaces sobre trato directo y convenio marco respectivamente):
@@ -27,7 +27,7 @@ La ejecución del segundo es la siguiente (en donde los últimos dos argumentos 
 ```bash
 anio=2022
 mes=01
-python Retriever_TD.py  anio mes Y Y
+python Retriever_TD.py anio mes Y Y
 ```
 
 ### Descargar archivos de los enlaces
