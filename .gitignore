@@ -3,11 +3,6 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# Carpetas de datos
-Links/CM/*
-Links/TD/*
-Links/LIC/*
-
 # C extensions
 *.so
 
